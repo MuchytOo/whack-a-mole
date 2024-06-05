@@ -1,0 +1,224 @@
+/* gamePage.scss */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.container {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../static/field.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 60px); /* Resta la altura del encabezado */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7em;
+}
+
+.user-info {
+  display: flex;
+  gap: 10px;
+  font-size: 1.2em;
+  align-items: center;
+}
+
+.separator {
+  height: 1em;
+  width: 1px;
+  background-color: black;
+  margin: 0 1em;
+}
+
+.mole-image {
+  width: 100%;
+  height: auto;
+}
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  @media (max-width: 500px) {
+    // Ajusta este valor según tus necesidades
+    position: relative;
+    left: 30px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  ); /* Ajusta el tamaño mínimo y máximo de las celdas */
+  grid-gap: 1px;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px; /* Establece un ancho máximo para la cuadrícula */
+  margin: 0 auto; /* Centra la cuadrícula horizontalmente */
+}
+.home-link {
+  margin-left: -20px; /* Ajusta este valor según tus necesidades */
+}
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 100%; /* Establece un ancho fijo para las celdas */
+  height: 150px; /* Establece una altura fija para las celdas */
+  position: relative;
+  @media (max-width: 375px) {
+    // Ajusta este valor según tus necesidades
+    height: 100px; // Ajusta este valor según tus necesidades
+  }
+}
+.mole-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.mole {
+  max-width: 100%;
+  max-height: 100%;
+  animation: appear 0.5s ease-out forwards;
+  @media (max-width: 450px) {
+    // Ajusta este valor según tus necesidades
+    max-width: 60%;
+  } // Ajusta este valor según tus necesidades
+}
+
+.mole-hole {
+  height: auto;
+  position: relative;
+  bottom: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  @media (max-width: 450px) {
+    // Ajusta este valor según tus necesidades
+    max-width: 60%;
+  } // Ajusta este valor según tus necesidades
+}
+
+.game-over {
+  text-align: center;
+  margin: 2em 0;
+}
+.table-container {
+  margin-top: 50px; /* Ajusta este valor según tus necesidades */
+  background-color: rgba(
+    252,
+    252,
+    252,
+    0.2
+  ); /* Fondo gris con 50% de opacidad */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden;
+  padding: 5px;
+}
+table {
+  width: 100%;
+}
+th,
+td {
+  padding: 10px; /* Ajusta este valor según tus necesidades */
+  text-align: left;
+}
+.game-over-container {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra los elementos a lo largo del eje vertical */
+  align-items: center; /* Centra los elementos a lo largo del eje horizontal */
+}
+.scores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.score-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin: 1em;
+  padding: 2em;
+  width: calc(50% - 2em);
+  text-align: center;
+}
+
+.score-card h3 {
+  margin: 0;
+  color: #6c757d;
+  font-size: 1.2em;
+}
+.restart-button {
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
+  color: white; /* Texto blanco */
+  border: none; /* Elimina el borde predeterminado */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espacio alrededor del texto */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+}
+
+.restart-button:hover {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Fondo negro con 70% de opacidad al pasar el mouse sobre el botón */
+}
+.return-button {
+  position: relative;
+  z-index: 2;
+}
+.score-card p {
+  margin: 0.5em 0 0;
+  color: #6c757d;
+  font-size: 1em;
+}
+
+@keyframes appear {
+  from {
+    transform: translateY(30%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@media (min-width: 1264px) {
+  .container {
+    max-width: 100%;
+  }
+}
