@@ -21,6 +21,10 @@ For detailed explanation on how things work, check out the [documentation](https
 
 ## Explanation
 
+# Instructions:
+
+To start the game locally, you need to run the command "npm run dev".
+
 # index.vue:
 
 This is the main page of the application. It contains a button to control the music and an IndexCard component. The music is controlled by the musicClick function, which toggles the music status and calls the toggleMusic function from indexPage.js.
