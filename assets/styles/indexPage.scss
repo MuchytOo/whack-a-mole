@@ -1,0 +1,55 @@
+/* indexPage.scss */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.errorInput {
+  color: red;
+  font-size: 0.75em;
+  background-color: transparent !important;
+}
+.difficulty-selector {
+  padding: 5px 10px;
+  border: 0.5px solid darkgray;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.mt16 {
+  margin-top: 16px;
+}
+.mt24 {
+  margin-top: 24px;
+}
+.container {
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../static/field.jpg');
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 1264px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1264px) {
+  .container {
+    max-width: 100%;
+  }
+}

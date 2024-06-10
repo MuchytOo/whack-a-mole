@@ -1,0 +1,18 @@
+{
+  "welcomeMessage": "Wrack a Mole!",
+  "enterName": "Nombre de usuario:",
+  "startGame": "Iniciar juego",
+  "userName": "Nombre de usuario",
+  "points": "Puntos",
+  "timeLeft": "Tiempo restante",
+  "difficulty": "Dificultad",
+  "gameOver": "¡Juego terminado!",
+  "youScored": "Has conseguido",
+  "playAgain": "Volver a jugar",
+  "scores": "Puntuaciones",
+  "user": "Usuario",
+  "score": "Puntuación",
+  "easy": "Easy",
+  "medium": "Medium",
+  "hard": "Hard"
+}
