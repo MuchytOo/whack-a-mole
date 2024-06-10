@@ -19,50 +19,26 @@ $ npm run generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Special Directories
+## Explanation
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+# index.vue:
 
-### `assets`
+This is the main page of the application. It contains a button to control the music and an IndexCard component. The music is controlled by the musicClick function, which toggles the music status and calls the toggleMusic function from indexPage.js.
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+# indexPage.js:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+This file contains two exported functions. startGame starts the game, setting the user's name, points, and difficulty in the Vuex store and then redirects the user to the game page. toggleMusic controls the music playback, playing it if musicStatus is true and pausing it if it's false.
 
-### `components`
+# IndexCard.vue:
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+This is a component that contains a form for the user to enter their name and select the game difficulty. When the form is submitted, the clickStartGame function is called, which starts the game using the startGame function from indexPage.js. If the user's name is not valid, an error message is displayed.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+# game.vue:
 
-### `layouts`
+This file is the main component of the game. It imports the Confetti component and the gamePage.js file, which contains the game logic. The component has a 'difficulty' property that is required. In the template, the user information, remaining time, and game difficulty are displayed. Also, a grid of cells is displayed, where a mole appears in a random cell. When the game ends, a "Game Over" message is displayed, along with the points obtained and a button to restart the game. A table with the scores is also displayed.
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+# gamePage.js:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+This file contains the game logic. In 'data', the game variables are initialized. In 'created', the user data is obtained from the Vuex store and the game is started. The 'endGame', 'startGame', 'restartGame', 'vibratePhone', 'moveMole', 'handleClick', and 'getPoints' functions control the game flow, the movement of the mole, the handling of user clicks, and the obtaining of points. When the component is destroyed, the game ends.
 
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+The project also uses Vuetify for the UI components and Vuex for state management. Styles are handled in indexPage.scss and text strings are stored in locales.json for easy localization.
